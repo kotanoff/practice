@@ -13,7 +13,7 @@ def hum(n, dic):
         else:
             print str(n) + " " + dic['one']
     elif (n % 10)>1 and (n % 10)<5:
-        if n>=11 and n<=15:
+        if n%100>=11 and n%100<=15:
             print str(n) + " " + dic['many']
         else:
             print str(n) + " " + dic['two']    
@@ -30,6 +30,6 @@ hum(14, dic)
 hum(17, dic)
 hum(21, dic)
 hum(22, dic)
-hum(111, dic)
-hum(131, dic)
+hum(112, dic)
+hum(132, dic)
 hum(11111, dic)
