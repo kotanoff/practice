@@ -2,11 +2,15 @@ def leap(y):
   if type(y) != int:
     print "You entered not a number."
   else:
-    if y%400==0:
+    if not y%400:
       print("It's a leap year.")
-    elif y%100==0:
+    elif not y%100:
       print("It's a not leap year.")
-    elif y%4==0:
+    elif not y%4:
       print("It's a leap year.")
     else:
       print("It's not a leap year.")
+leap(1904)
+leap(1900)
+leap(1903)
+leap(2013)
