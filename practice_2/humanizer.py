@@ -7,7 +7,7 @@ def hum(n, dic):
   elif type(dic) != dict:
     print "This isn't a dictionary"
   else:
-    if (n % 10)>=1 and (n % 10)<5:
+    if n%10 in range(1,5):
         if n%100 in range(11,15):
             print str(n) + " " + dic['many']
         elif(n % 10)==1:
