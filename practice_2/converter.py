@@ -118,7 +118,7 @@ while f:
     f = 0
   elif type(symb) != int:
     print "Это не цифра"
-  elif symb > 9 or symb < 0:
+  elif symb >= 9 or symb <= 0:
     print "Это не цифра"
   else:
     options[symb]()
