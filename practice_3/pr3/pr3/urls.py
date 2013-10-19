@@ -5,8 +5,8 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'pages.views.home'),
-    url(r'^log/(?P<diry>([-,.\w]*/)*)$','pages.views.listing'),
+    url(r'^$', 'pages.views.home', name='home'),
+    url(r'^log/(?P<paths>([-,.\w]*/)*)$','pages.views.listing'),
     # Examples:
     # url(r'^$', 'control_panel.views.home', name='home'),
     # url(r'^control_panel/', include('control_panel.foo.urls')),
