@@ -23,7 +23,7 @@ class Book(models.Model):
         cur.execute(
             "SELECT id FROM library_book WHERE title = %s",
             [self.title])
-        return "/library/books/%s/" % cur.fetchall()[0]
+        return '/library/books/%s/' % cur.fetchall()[0]
 
     def __unicode__(self):
         return self.title
