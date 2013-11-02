@@ -2,8 +2,8 @@
 from django.shortcuts import render
 from django.template import Template
 from django.template import Context
-from library.models import Author
-from library.models import Book
+from books.models import Author
+from books.models import Book
 import datetime
 
 

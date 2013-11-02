@@ -6,11 +6,11 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns(
     '',
-    url(r'^library/$', 'library.views.books'),
-    url(r'^library/books/$', 'library.views.books'),
-    url(r'^library/books/(\d+)/$', 'library.views.book'),
-    url(r'^library/authors/$', 'library.views.authors'),
-    url(r'^library/authors/(\d+)/$', 'library.views.author'),
+    url(r'^library/$', 'books.views.books'),
+    url(r'^library/books/$', 'books.views.books'),
+    url(r'^library/books/(\d+)/$', 'books.views.book'),
+    url(r'^library/authors/$', 'books.views.authors'),
+    url(r'^library/authors/(\d+)/$', 'books.views.author'),
     # Examples:
     # url(r'^$', 'library.views.home', name='home'),
     # url(r'^library/', include('library.foo.urls')),
