@@ -36,5 +36,5 @@ class Publisher(models.Model):
     website = models.URLField()
 
     def __unicode__(self):
-    return u'%s (%s)' % (self.title, self.website)
+        return u'%s (%s)' % (self.title, self.website)
     
