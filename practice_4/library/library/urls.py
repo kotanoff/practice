@@ -5,6 +5,11 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^library/$', 'library.views.books'),
+    url(r'^library/books/$', 'library.views.books'),
+    url(r'^library/books/(\d+)/$', 'library.views.book'),
+    url(r'^library/authors/$', 'library.views.authors'),
+    url(r'^library/authors/(\d+)/$', 'library.views.author'),
     # Examples:
     # url(r'^$', 'library.views.home', name='home'),
     # url(r'^library/', include('library.foo.urls')),
