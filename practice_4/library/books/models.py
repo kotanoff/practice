@@ -1,4 +1,5 @@
 from django.db import models
+from django.db import connection
 import datetime
 
 
@@ -21,7 +22,7 @@ class Book(models.Model):
     def get_absolute_url(self):
         cur = connection.cursor()
         cur.execute(
-            "SELECT id FROM library_book WHERE title = %s",
+            "SELECT id FROM books_book WHERE title = %s",
             [self.title])
         return '/library/books/%s/' % cur.fetchall()[0]
 
