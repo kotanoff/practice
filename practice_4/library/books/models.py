@@ -9,7 +9,7 @@ class Author(models.Model):
     email = models.EmailField(null=True, blank=True)
 
     def __unicode__(self):
-      return u'%s %s' % (self.first_name, self.last_name)
+        return u'%s %s' % (self.first_name, self.last_name)
 
 
 class Book(models.Model):
