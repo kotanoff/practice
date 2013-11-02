@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 
+
 # Create your models here.
 class Author(models.Model):
     first_name = models.CharField(max_length=32)
@@ -37,4 +38,3 @@ class Publisher(models.Model):
 
     def __unicode__(self):
         return u'%s (%s)' % (self.title, self.website)
-    
