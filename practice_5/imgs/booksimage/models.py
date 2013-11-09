@@ -25,8 +25,8 @@ class Book(models.Model):
     publication_date = models.DateField(default=datetime.datetime.now())
 
     class Meta(object):
-    	verbose_name=u'Kniga'
-    	verbose_name_plural=u'Knigi'
+        verbose_name=u'Kniga'
+        verbose_name_plural=u'Knigi'
 
     def get_absolute_url(self):
         cur = connection.cursor()
