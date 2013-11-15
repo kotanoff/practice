@@ -7,9 +7,15 @@ from django.contrib.contenttypes import generic
 
 
 class AuthorsAdmin(admin.ModelAdmin):
-    list_display=['last_name', 'first_name', 'email']
+    list_display=['last_name', 'first_name', 'email', 'birthyear']
     list_display_links=['last_name', 'first_name']
     ordering=['last_name', 'first_name']
+
+    def year(request, self):
+        if self.birthyear:
+            return self.birthyear
+        else:
+            return 'the age is unknown'
 
 
 class BooksImageInline(generic.GenericTabularInline):

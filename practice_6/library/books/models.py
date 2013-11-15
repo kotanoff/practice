@@ -10,6 +10,7 @@ class Author(models.Model):
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32)
     email = models.EmailField(null=True, blank=True)
+    birthyear = models.IntegerField(null=True, blank=True)
 
     def __unicode__(self):
         return u'%s %s' % (self.first_name, self.last_name)

@@ -12,6 +12,12 @@
    <td>{{ author.email }}</td>
   </tr>
   {% endif %}
+  {% if author.birthyear %}
+  <tr>
+   <td>Age:</td>
+   <td>{{ author.birthyear }}</td>
+  </tr>
+  {% endif %}
  </table>
 </body>
 </html>
