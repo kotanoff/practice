@@ -21,4 +21,3 @@ class Order(TimeStampedModel):
     itemId = models.ForeignKey(Book)
     create = models.DateField(default=datetime.now())
     customer = models.ForeignKey(Customer, null=True)
-		

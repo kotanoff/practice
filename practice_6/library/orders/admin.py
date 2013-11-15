@@ -1,6 +1,7 @@
 from django.contrib import admin
 from orders.models import *
 
+
 class OrderAdmin(admin.ModelAdmin):
     list_display=['itemId', 'created']
     list_display_links=['itemId']
