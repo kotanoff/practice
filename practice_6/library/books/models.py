@@ -24,6 +24,7 @@ class Book(models.Model):
     authors = models.ManyToManyField('Author')
     publisher = models.ForeignKey('Publisher')
     publication_date = models.DateField(default=datetime.datetime.now())
+    description=models.TextField('Description')
 
     class Meta(object):
         verbose_name=u'Kniga'

@@ -23,12 +23,12 @@ class BooksImageInline(generic.GenericTabularInline):
 
 
 class BooksAdmin(admin.ModelAdmin):
-    list_display=['title', 'publisher', 'publication_date', 'cnt']
+    list_display=['title', 'publisher', 'publication_date', 'cnt', 'description']
     list_display_links=['title']
     search_fields=['title']
     fieldsets= (
         (None, {
-            'fields': ('title', 'publication_date')
+            'fields': ('title', 'publication_date', 'description')
         }),
         ('Output data', {
             'fields': ('publisher', )
