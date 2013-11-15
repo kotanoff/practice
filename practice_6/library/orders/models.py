@@ -1,11 +1,11 @@
 from django.db import models
 from books.models import *
 from datetime import datetime
-#from utils.models import TimeStampedModel
+from utils.models import TimeStampedModel
 
 
 # Create your models here.
-class Customer(models.Model):
+class Customer(TimeStampedModel):
     firstName = models.CharField(max_length=32)
     lastName = models.CharField(max_length=32)
     address = models.TextField()
@@ -17,8 +17,8 @@ class Customer(models.Model):
             self.lastName, self.firstName)
 
 
-class Order(models.Model):
+class Order(TimeStampedModel):
     itemId = models.ForeignKey(Book)
-    created = models.DateField(default=datetime.now())
+    create = models.DateField(default=datetime.now())
     customer = models.ForeignKey(Customer, null=True)
 		
