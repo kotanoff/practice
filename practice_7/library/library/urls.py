@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from orders.views import CustomersList, CustomerDetails
+from books.views import BookList, AuthorList, BookDetail, AuthorDetail
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -7,11 +8,11 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^library/$', 'books.views.books'),
-    url(r'^library/books/$', 'books.views.books'),
-    url(r'^library/books/(\d+)/$', 'books.views.book'),
-    url(r'^library/authors/$', 'books.views.authors'),
-    url(r'^library/authors/(\d+)/$', 'books.views.author'),
+    url(r'^library/$', BookList.as_view()),
+    url(r'^library/books/$', BookList.as_view()),
+    url(r'^library/books/(?P<pk>\d+)/$', BookDetail.as_view()),
+    url(r'^library/authors/$', AuthorList.as_view()),
+    url(r'^library/authors/(?P<pk>\d+)/$', AuthorDetail.as_view()),
     url(r'^orders/$', CustomersList.as_view()),
     url(r'^orders/(?P<pk>\d+)/$', CustomerDetails.as_view(template_name="orders/customer.html")),
     # Examples:

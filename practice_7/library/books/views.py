@@ -1,32 +1,24 @@
 # Create your views here.
-from django.shortcuts import render
-from django.template import Template
-from django.template import Context
 from books.models import Author
 from books.models import Book
+from django.views.generic import ListView
+from django.views.generic import DetailView
 import datetime
 
 
-def home(request):
-    context = {'ts': datetime.datetime.now()}
-    return render(request, 'home.html', context)
+class BookList(ListView):
+    model = Book
+    context_object_name = 'books'
 
 
-def books(request):
-    context = {'books': Book.objects.all()}
-    return render(request, 'books.html', context)
+class AuthorList(ListView):
+    model = Author
+    context_object_name = 'authors'
 
 
-def book(request, book_id):
-    context = {'book': Book.objects.get(id=book_id)}
-    return render(request, 'book.html', context)
+class BookDetail(DetailView):
+    queryset = Book.objects.all()
 
 
-def author(request, author_id):
-    context = {'author': Author.objects.get(id=author_id)}
-    return render(request, 'author.html', context)
-
-
-def authors(request):
-    context = {'authors': Author.objects.all()}
-    return render(request, 'authors.html', context)
+class AuthorDetail(DetailView):
+    queryset = Author.objects.all()
