@@ -18,7 +18,8 @@
    </td>
    <td>
    {% for authors in item.authors.all %}
-    {{ authors.last_name }},
+   <a href="{{ authors.get_absolute_url }}">{{ authors.last_name }}{% if 1 %}, {% endif %}
+   <!--над эти надо подумать, как избавиться от ненужной запятой-->
    {% endfor %}
    </td>
    <td>

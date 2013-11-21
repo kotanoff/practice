@@ -21,3 +21,10 @@ class Order(TimeStampedModel):
     itemId = models.ForeignKey(Book)
     create = models.DateField(default=datetime.now())
     customer = models.ForeignKey(Customer, null=True)
+
+    def get_absolute_url(self):
+        return "/orders/{}/".format(self.id)
+
+    def __unicode__(self):
+        return u'%s - %s @ %s' % (
+            self.itemId, self.customer, self.create)
